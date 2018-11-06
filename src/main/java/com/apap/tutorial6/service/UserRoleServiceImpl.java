@@ -38,6 +38,7 @@ public class UserRoleServiceImpl implements UserRoleService{
 		user.setPassword(pass);
 		userDb.save(user);
 	}
+	
 
 
 }

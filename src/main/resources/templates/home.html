@@ -12,9 +12,8 @@
 	<nav th:replace="fragments/fragment :: navbar"></nav>
 
 	<div class="container-fluid">
-		<h2 th:text=" 'Hello ' + ${#httpServletRequest.remoteUser} + ' !'">Login
-			as</h2>
-
+		<h2 th:text=" 'Hello ' + ${#httpServletRequest.remoteUser} + ' !'">Login as</h2>
+		<p th:text="${message}"></p>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="card">
@@ -22,15 +21,17 @@
 					<div class="card-body">
 						<form th:action="@{/user/addUser}" method="POST">
 							<div class="row form-group">
-								<label class="col-sm-4"> User Name</label> <input
+								<label class="col-sm-4"> User Name</label> 
+								<input
 									class="col-sm-8 form-control input-sm" type="text"
 									name="username" />
 							</div>
 							<div class="row form-group">
 								<label class="col-sm-4"> Password: </label> <input
 									class="col-sm-8 form-control input-sm" type="password"
-									name="password" required pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}"
-									title="Password must be 8 characters including 1 letter and 1 numeric characters" />
+									name="password" required />
+<!-- 									pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}"
+									title="Password must be 8 characters including 1 letter and 1 numeric characters"  -->
 							</div>
 							<div class="row form-group">
 								<label class="col-sm-4"> Role: </label> <input

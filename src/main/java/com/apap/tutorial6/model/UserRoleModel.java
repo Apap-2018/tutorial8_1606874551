@@ -29,7 +29,7 @@ public class UserRoleModel implements Serializable {
 
     @NotNull
     @Size(max = 50)
-    @Column(name = "username", nullable = false)
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
     
     @NotNull
